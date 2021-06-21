@@ -7,6 +7,7 @@ const colors = ['#eb2315', '#1c15d4', '#d514d9', '#33d911', '#ebc107', '#eb6607'
 const psyMode = document.querySelector('input[type=checkbox]')
 let time = 0
 let score = 0
+let missClick = 0
 
 startBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -26,7 +27,9 @@ board.addEventListener('click', e => {
         score++
         e.target.remove()
         createRandomCircle()
-    } 
+    } else {
+        missClick++
+    }
 })
 
 function startGame() {
